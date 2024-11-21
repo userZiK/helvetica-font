@@ -1,0 +1,45 @@
+#p1 {
+	font-weight: bold;
+	font-family: Helvetica;
+	font-size: 200px;
+}
+
+#p2 {
+	font-family: Helvetica;
+	font-size: 150px;
+}
+
+#p3 {
+	font-family: Helvetica;
+	font-size: 100px
+}
+
+#p4 {
+	font-family: Helvetica;
+	font-size: 50px
+
+}
+
+#head {
+	font-weight: bolder;
+	font-family: Helvetica;
+	color: red;
+	font-size: 130px;
+	padding-top: 30px;
+	padding-bottom: 2px;
+	padding-left: 50px;
+	background-color: black;
+	width: 100%;
+    position: sticky;
+    top: 0; }
+
+ #sub {
+	font-weight: lighter;
+	font-family: Helvetica;
+	color: red;
+	font-size: 24px;
+	padding-top: 2px;
+	padding-bottom: 25px;
+	padding-left: 50px;
+	background-color: black;
+	width: 100%; }

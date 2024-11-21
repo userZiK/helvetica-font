@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>poster</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.MIN.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<style type="text/css">
+body {
+	margin: 0;
+}
+
+		#head {
+			font-weight: bolder;
+			font-family: Helvetica;
+			color: red;
+			font-size: 108px;
+			padding-top: 30px;
+			padding-bottom: 2px;
+			padding-left: 50px;
+			background-color: black;
+			width: 100%;
+      position: sticky;
+      top: 0;
+		}
+
+		#sub {
+			font-weight: lighter;
+			font-family: Helvetica;
+			color: red;
+			font-size: 24px;
+			padding-top: 2px;
+			padding-bottom: 25px;
+			padding-left: 50px;
+			background-color: black;
+			width: 100%;
+
+		}
+
+		.pic {
+      position: absolute;
+      height: 400px;}
+
+
+		a {
+			font-family: Helvetica;
+			font-weight: lighter;
+			font-size: 24px;
+		}
+
+	</style>
+</head>
+<body>
+
+<header id="head">
+    Helvetica
+    <nav id="sub">
+      <a href="helvetica 3.html">page 1</a>
+      <a href="helvetica 2.html">page 2</a>
+      <a href="poster.html">page 3</a>
+    </nav>
+  </header>
+
+	<img class="pic" src="images/crayon.jpg">
+	<img class="pic" src="images/dieneue.jpg">
+	<img class="pic" src="images/face.jpg">
+	<img class="pic" src="images/giselle.jpg">
+	<img class="pic" src="images/love.jpg">
+	<img class="pic" src="images/sex.jpg">
+	<img class="pic" src="images/subway.jpg">
+	<img class="pic" src="images/thank.jpg">
+	<img class="pic" src="images/1957.jpg">
+	<img class="pic" src="images/greatest.jpg">
+	<img class="pic" src="images/green.jpg">
+	<img class="pic" src="images/orange.jpg">
+
+<script>
+  $(document).ready(function() {
+    $('.pic').each(function() {
+      const maxX = $(window).width() - $(this).width();
+      const maxY = $(window).height() - $(this).height();
+      const randomX = Math.floor(Math.random() * maxX);
+      const randomY = Math.floor(Math.random() * maxY);
+
+      $(this).css({
+          top: randomY + 'px',
+          left: randomX + 'px'
+      }) .draggable();
+    });
+  });
+</script>
+
+</body>
+</html>

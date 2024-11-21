@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>font weights</title>
+	<style type="text/css">
+
+		body {
+			min-height: 100vh;
+			display: flex;
+			justify-content: center;
+			margin: 0;
+		}
+
+		.items {
+			height: 800px;
+			padding: 15px;
+			width: 75%;
+			overflow-x: scroll;
+			user-select: none;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			transform: scale(0.98);
+		}
+		
+		
+		#ligh {
+			font-family: Helvetica;
+			font-weight: lighter;
+			font-size: 100px
+		}
+
+		#reg {
+			font-family: Helvetica;
+			font-weight: normal;
+			font-size: 100px
+		}
+
+		#bo {
+			font-family: Helvetica;
+			font-weight: bold;
+			font-size: 100px
+		}
+
+		#boer {
+			font-family: Helvetica;
+			font-weight: bolder;
+			font-size: 100px
+		}
+
+		#obl {
+			font-family: Helvetica;
+			font-style: oblique;
+			font-size: 100px;
+		}
+
+		#ita {
+			font-family: Helvetica;
+			font-style: italic;
+			font-size: 100px 
+		}
+
+
+		#cap {
+			font-family: Helvetica;
+			font-weight: normal;
+			font-size: 50px;
+			font-variant: small-caps;
+		}
+
+
+		#head {
+			font-weight: bolder;
+			font-family: Helvetica;
+			color: red;
+			font-size: 108px;
+			padding-top: 30px;
+			padding-bottom: 2px;
+			padding-left: 50px;
+			background-color: black;
+			width: 100%;
+      		position: sticky;
+      		top: 0;
+      		text-align: left;
+		}
+
+		#sub {
+			font-weight: lighter;
+			font-family: Helvetica;
+			color: red;
+			font-size: 24px;
+			padding-top: 2px;
+			padding-bottom: 25px;
+			padding-left: 50px;
+			background-color: black;
+			width: 100%;
+			text-align: left
+		}
+
+		.items.active {
+			cursor: 
+			transform: scale(1);
+		}
+
+		
+
+	</style>
+</head>
+<body>
+
+<header id="head">
+    Helvetica
+    <nav id="sub">
+      <a href="helvetica 3.html">page 1</a>
+      <a href="helvetica 2.html">page 2</a>
+      <a href="poster.html">page 3</a>
+    </nav>
+  </header>
+
+<div class="items"> 
+	<div id="ligh">Lighter</div>
+	<div id="reg">Regular</div>
+	<div id="bo">Bold</div>
+	<div id="boer">Bolder</div>
+	<div id="ita">Italic</div>
+	<div id="obl">Oblique</div>
+	<div id="cap">Small Caps</div>
+</div>
+
+
+<script type="text/javascript">
+	const slider = document.querySelector('.items');
+	let isDown = false;
+	let startX;
+	let scrollLeft;
+
+	slider.addEventListener('mousedown', (e) => {
+		isDown =  true;
+		slider.classList.add('active');
+		startX = e.pageX - slider.offsetLeft;
+		scrollLeft = slider.scrollLeft;
+
+	});
+	slider.addEventListener('mouseleave', () => {
+		isDown = false;
+		slider.classList.remove('active');
+
+	});
+	slider.addEventListener('mouseup', () => {
+		isDown = false;
+		slider.classList.remove('active');
+
+	});
+	slider.addEventListener('mousemove', (e) => {
+		if (!isDown) return; 
+		e.preventDefault();
+		const x = e.pageX - slider.offsetLeft;
+		const walk = x - startX;
+		slider.scrollLeft = scrollLeft - walk;
+		
+
+	});
+</script>
+
+</body>
+</html>

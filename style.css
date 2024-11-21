@@ -1,0 +1,32 @@
+h1 {
+	font-family: Helvetica;
+	font-weight: bold;
+	font-size: 108px;
+	color: red;
+
+}
+.box {
+
+}
+
+#cont {
+	display: grid;
+	gap: 1.5rem;
+	grid-template-columns: repeat(20, 1fr);
+}
+
+p {
+}
+
+#p1 {grid-column: span 4;
+	font-family: Helvetica;
+
+}
+
+#p2 {grid-column: span 3;
+	font-family: Helvetica;
+}
+
+#p3 {grid-column: span 1;
+	font-family: Helvetica;
+}
